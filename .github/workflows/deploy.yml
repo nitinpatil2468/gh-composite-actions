@@ -12,7 +12,7 @@ jobs:
       - name: load and Cache dependencies
         uses: ./.github/actions/cached-dps
         with:
-          caching: 'false'
+          caching: 'true'
       - name: Lint code
         run: npm run lint
   test:
@@ -22,8 +22,6 @@ jobs:
         uses: actions/checkout@v7
       - name: load and Cache dependencies
         uses: ./.github/actions/cached-dps
-        with:
-          caching: 'false'
       - name: Test code
         id: run-tests
         run: npm run test
@@ -41,8 +39,6 @@ jobs:
         uses: actions/checkout@v7
       - name: load and Cache dependencies
         uses: ./.github/actions/cached-dps
-        with:
-          caching: 'false'
       - name: Build website
         run: npm run build
       - name: Upload artifacts
